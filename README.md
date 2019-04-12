@@ -1,0 +1,2 @@
+# FibonacciWord
+毕业设计有关斐波那契分形曲线的相关分析MATLAB
