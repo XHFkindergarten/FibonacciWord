@@ -26,18 +26,18 @@ binary_data_reverse_double = double(~binary_data);
 %如果图像本身就是用白色曲线来表征它的特征，则后续的数据操作对象为binary_data
 %%=======================================这里很重要==========================================
  
-figure
+% figure
 % subplot(a,b,n)用于画小图
 % 代表有a行b列
 % n代表位于从左到右，从上到下第n个图
-subplot(2,2,1);imshow(gray_data);title('Grayscale Image');
-subplot(2,2,2);imshow(binary_data_double);title('Binary Image');
-subplot(2,2,3);imshow(binary_data_reverse_double);title('Reversal Binary Image');
+% subplot(2,2,1);imshow(gray_data);title('Grayscale Image');
+% subplot(2,2,2);imshow(binary_data_double);title('Binary Image');
+% subplot(2,2,3);imshow(binary_data_reverse_double);title('Reversal Binary Image');
 
 % assignin(WS,name,value)为工作空间中的变量指派值
 % base为工作空间名称
 % 然后将值value赋给变量name
-assignin('base','binary_data_reverse',binary_data_reverse_double)
+assignin('base','binary_target',binary_data_reverse_double)
 assignin('base','gray_data',gray_data)
 assignin('base','binary_data',binary_data_double)
 end
