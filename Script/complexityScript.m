@@ -1,17 +1,25 @@
 
-word = constructWord(7,5,10000)
-data = zeros(1,300);
-for i=1:300
-    res = [string('')];
-    for j=1:5000
-        temp = word( j : j+i-1 );
-        if(ismember(temp,res)==0)
-            res = [res,temp];
+for a = 5:9
+    for b = 0:a-1
+        title = ['y=',num2str(a),'x+',num2str(b)]
+        word = constructWord(a,b,10000);
+        data = zeros(1,300);
+        for i=1:300
+            res = [string('')];
+            for j=1:5000
+                temp = word( j : j+i-1 );
+                if(ismember(temp,res)==0)
+                    res = [res,temp];
+                end
+            end
+            data(i) = length(res)-1;
         end
+        data
     end
-    data(i) = length(res)-1;
 end
-data
+
+
+
 
 % for m = 0:8
 %     word = constructWord(9,m);

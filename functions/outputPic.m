@@ -51,3 +51,6 @@ axis off;
 xlabel('x÷·');
 % y÷·◊¢ Õ
 ylabel('y÷·');
+
+print(gcf,'-r900','-djpeg','example.jpeg');
+

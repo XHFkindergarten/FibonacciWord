@@ -1,3 +1,3 @@
 clc;
 
-r2gb(y_9x_8);
+r2gb(test);
