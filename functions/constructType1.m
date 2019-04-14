@@ -1,16 +1,11 @@
-% 构造 y = a*x^3 + b*x^2 + c*x + d
-function[word] = constructType1(a,b,c,d)
+% 构造斐波那契文字无限序列
+function[output] = constructType1(p,q,k)
+% pqr对应函数表达式y = p*x+r（此处仅针对一维函数表达式）
+% k代表生成长度为k的子列
 
-word = getPrimaryWord();
+% 生成1-k位均为' '的数组
+output = repmat(' ',1,k);
 
-output = [];
-index = 1;
-temp = a*power(index,3)+b*power(index,2)+c*index+d;
-while(temp<=length(word))
-    output = [output,word(temp)];
-    index = index + 1;
-    temp = a*power(index,3)+b*power(index,2)+c*index+d;
-end
-
-
+for i=1:k
+    output(i) = Generate(p*i+q);
 end

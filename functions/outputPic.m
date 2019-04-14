@@ -1,6 +1,6 @@
 % =======函数说明=======
 % 该函数用来将斐波那契系列及其子列以图像的形式输出
-function[] = outputPic(word,a,b)
+function[] = outputPic(word,a,b,c)
 
 % 根据斐波那契文字无限序列构造xy点集
 % 起点（0，0）
@@ -39,7 +39,9 @@ end
 % 限定坐标轴的显示范围 axis([Xmin,Xmax,Ymin,Ymax])
 % axis([-10 10 -10 10]);
 
-figure
+% figure
+fh = figure('Visible','off'); % 不显示图像
+
 plot(x,y,'+b-','MarkerSize',0.5,'LineWidth',1);
 % 统一坐标轴刻度
 axis equal;
@@ -52,7 +54,8 @@ xlabel('x轴');
 % y轴注释
 ylabel('y轴');
 
+
 % 路径如果使用相对路径会报错(不知道为什么)
-path = ['D:\MATLAB\FibonacciWord\DemensionImg/y=',num2str(a),'x+',num2str(b),'.jpeg'];
+path = ['D:\MATLAB\FibonacciWord\DemensionImg\thrid/y=',num2str(a),'x^3+',num2str(b),'x^2+',num2str(c),'x.jpeg'];
 print(gcf,'-r1200','-djpeg',path);
 

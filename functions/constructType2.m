@@ -1,15 +1,13 @@
-% 构造 y = a*x^4 + b*x^3 + c*x^2 + d*x + e
-function [output] = constructType2(a,b,c,d,e)
+% 构造 y = a*x^2 + b*x + c
+% k代表生成长度为k的子列
 
-word = getPrimaryWord();
+function[output] = constructType2(a,b,c,k)
 
-output = [];
-index = 1;
-temp = a*power(index,4)+b*power(index,3)+c*power(index,2)+d*index+e;
-while(temp<=length(word))
-    output = [output,word(temp)];
-    index = index + 1;
-    temp = a*power(index,4)+b*power(index,3)+c*power(index,2)+d*index+e;
+% 生成1-k位均为' '的数组
+output = repmat(' ',1,k);
+
+for i=1:k
+    output(i) = Generate(a*power(i,2)+b*i+c);
 end
 
 
